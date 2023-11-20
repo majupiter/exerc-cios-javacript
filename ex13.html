@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Exemplo 13</title>
+</head>
+<body style="font-size: 26px;">
+    <h2>Exemplo 13 <br> Mouse over/out</h2>
+
+    <div onmouseover="a(this);" 
+      onmouseout="b(this);" 
+      style="background-color: rgb(186, 35, 35);
+      width: 300px;height: 200px;
+      color: green;
+      font-size: 100px;
+      padding-top: 60px;
+      padding-left: 20px;
+      border: 3px solid green">
+        b
+    </div>
+    <script>
+        function a(obj){
+            obj.innerHTML = "a";
+            obj.style.fontSize = "60px";
+            obj.style.paddingTop = "60px";
+        }
+        function b(obj){
+            obj.innerHTML = "b";
+            obj.style.fontSize = "100px";
+            obj.style.paddingTop = "60px";
+        }
+    </script>
+</body>
+</html>
