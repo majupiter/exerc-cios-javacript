@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Exemplo 10</title>
+</head>
+<body style="font-size: 20px;">
+    <h2>Cálculo de Média</h2>
+    <div style="padding: 10px;border:2px solid blueviolet; background-color: rgb(48, 195, 195); box-shadow: 4px 4px gray;">
+        <label for="nota1" name="nota1">Nota 1:</label>
+        <input id="nota1" type="text" placeholder="0.0"> <br>
+        <label for="nota2" name="nota2">Nota 2:</label>
+        <input id="nota2" type="text" placeholder="0.0"> <br>
+        <div>
+            <button onclick="calcular();">Média</button>
+            <button onclick="limpar();">Limpar</button>
+            <button onclick="aterarLayout();" class="btlayout">Modo Dark</button>
+        </div>
+        <h3 class="result">Resultado:</h3>
+    </div>
+    <script>
+        let modo = 0;
+        function aterarLayout(){
+            const minhaDiv = 
+            document.getElementsByTagName("div")[0].style;
+            const meuBotao = document.getElementsByTagName("button")[2].style;
+            if(modo==0){
+                minhaDiv.backgroundColor = "black";
+                minhaDiv.color = "white";
+                meuBotao.backgroundColor = "white";
+                meuBotao.color = "black";
+                document.getElementsByTagName("button")[2].innerHTML = "Modo Light";
+                modo=1;
+            }else{
+                minhaDiv.padding = "10px";
+                minhaDiv.border = "2px solid blueviolet";
+                minhaDiv.backgroundColor= "rgb(48, 195, 195)";
+                meuBotao.backgroundColor = "black";
+                meuBotao.color = "white";
+                document.getElementsByTagName("button")[2].innerHTML = "Modo Dark";
+                modo=0;
+            }
+
+        }
+        function calcular(){
+            const nota1 = parseFloat(document.getElementById("nota1").value);
+            const nota2 = parseFloat(document.getElementById("nota2").value);
+            let media = (nota1+nota2)/2;
+            const resultado = document.getElementsByClassName("result");
+            resultado[0].innerHTML = "Resultado: "+media;  
+        }
+        function limpar(){
+            const caixa = document.getElementsByTagName("input");
+            console.log(caixa);
+            caixa[0].value = "";
+            caixa[1].value = "";
+            document.getElementsByClassName("result")[0].innerHTML = "Resultado:"
+        }
+    </script>
+</body>
+</html>
